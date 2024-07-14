@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\Fish">
+      <UniqueIdentifier>{0ea4f1bf-4084-40f4-9538-02a5471c3f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Scene">
+      <UniqueIdentifier>{af64f4ae-3c50-43b1-94f4-b188b3fac302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Tools">
+      <UniqueIdentifier>{282f4f3a-7a49-4a71-81f7-c9d8051157ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Tools">
+      <UniqueIdentifier>{c9aacc27-6ee1-4c3d-bab9-6c96710590fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Fish">
+      <UniqueIdentifier>{ed9b08fa-8af5-4320-84cb-390467ea713b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Scene">
+      <UniqueIdentifier>{02801719-2737-48f9-82c2-7124db6815a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Animation">
+      <UniqueIdentifier>{6a72b602-baf9-4239-854c-a6702859a5b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Animation">
+      <UniqueIdentifier>{66834e67-e7bf-4b1a-9678-46f153f9cd1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Player">
+      <UniqueIdentifier>{a039b889-89ce-4d32-a4b5-9dae63111075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Player">
+      <UniqueIdentifier>{fde9d37d-e7d2-4477-a2cb-bf0e6bc28bd8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>源文件\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>源文件\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>源文件\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>源文件\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>源文件\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>源文件\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>源文件\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Atlas.cpp">
+      <Filter>源文件\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools.cpp">
+      <Filter>源文件\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_0.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_1.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_3.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_4.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_5.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_6.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_7.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_2.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_8.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish_9.cpp">
+      <Filter>源文件\Fish</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>源文件\Player</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Fish.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>头文件\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>头文件\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>头文件\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>头文件\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>头文件\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>头文件\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>头文件\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Atlas.h">
+      <Filter>头文件\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools.h">
+      <Filter>头文件\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_0.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_1.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_2.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_3.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_4.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_5.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_6.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_7.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_9.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish_8.h">
+      <Filter>头文件\Fish</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>头文件\Player</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

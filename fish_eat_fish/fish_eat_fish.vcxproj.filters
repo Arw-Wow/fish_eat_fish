@@ -111,6 +111,12 @@
     <ClCompile Include="Player.cpp">
       <Filter>源文件\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Player_1.cpp">
+      <Filter>源文件\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player_2.cpp">
+      <Filter>源文件\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fish.h">
@@ -174,6 +180,12 @@
       <Filter>头文件\Fish</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>头文件\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_1.h">
+      <Filter>头文件\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_2.h">
       <Filter>头文件\Player</Filter>
     </ClInclude>
   </ItemGroup>

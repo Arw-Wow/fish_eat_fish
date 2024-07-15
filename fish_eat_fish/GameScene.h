@@ -6,6 +6,8 @@
 
 #include "SceneManager.h"
 #include "Player.h"
+#include "Player_1.h"
+#include "Player_2.h"
 #include "Fish.h"
 #include "Fish_0.h"
 #include "Fish_1.h"
@@ -19,7 +21,8 @@
 #include "Fish_9.h"
 
 extern SceneManager* scene_manager;
-extern Player* player;
+extern Player* player_1;
+extern Player* player_2;
 extern IMAGE img_background;
 extern IMAGE img_bar;
 extern std::vector <Fish*> fish_list;
@@ -50,7 +53,7 @@ private:
 
 	void generate_fish_randomly();
 
-	void check_touch();
+	void check_touch(Player* player);
 
 private:
 

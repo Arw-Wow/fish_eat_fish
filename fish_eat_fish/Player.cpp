@@ -2,6 +2,7 @@
 
 Player::Player()
 {
+
     hp = 5;
 
     // 初始大小
@@ -15,25 +16,8 @@ Player::Player()
     // 初始位置
     m_position.x = getwidth() / 2.0 - m_size.x / 2.0;
     m_position.y = getheight() / 2.0 - m_size.y / 2.0;
-    // m_position.x = 1;
-    // m_position.y = 1;
 
-    atlas_player_left.resize(m_size.x, m_size.y);
-    atlas_player_left.save_flip_atlas_to(atlas_player_right);
 
-    animation_player_left.set_atlas(&atlas_player_left);
-    animation_player_left.set_size(m_size.x, m_size.y);
-    animation_player_left.set_interval(200);
-    animation_player_left.set_loop(true);
-    animation_player_left.set_callback(nullptr);
-
-    animation_player_right.set_atlas(&atlas_player_right);
-    animation_player_right.set_size(m_size.x, m_size.y);
-    animation_player_right.set_interval(200);
-    animation_player_right.set_loop(true);
-    animation_player_right.set_callback(nullptr);
-
-    current_animation = &animation_player_left;
 
     timer_invincible.set_interval(2000);
     timer_invincible.set_loop(false);
@@ -47,7 +31,7 @@ Player::Player()
 
 Player::~Player()
 {
-
+	
 }
 
 void Player::on_input(const ExMessage& msg)
@@ -68,9 +52,6 @@ void Player::on_input(const ExMessage& msg)
             break;
         case to_vkcode('d'):	//d
             is_move_right = true;
-            break;
-        case VK_SPACE:
-            is_debug = !is_debug;
             break;
         }
         break;
@@ -104,14 +85,14 @@ void Player::on_update(int delta)
     // 调整大小并播放动画
     if (is_size_change)
     {
-        double current_area = player_origin_size * player_origin_size + score * 3.0 / player_x_y_proportion;
+        double current_area = player_origin_size * player_origin_size + score * 30.0 / player_x_y_proportion;
         m_size.x = sqrt(current_area) * player_x_y_proportion;
         m_size.y = sqrt(current_area);
         rejust_touch_size();
-        atlas_player_left.resize(m_size.x, m_size.y);
-        atlas_player_left.save_flip_atlas_to(atlas_player_right);
-        animation_player_left.set_atlas(&atlas_player_left);
-        animation_player_right.set_atlas(&atlas_player_right);
+        atlas_player_left->resize(m_size.x, m_size.y);
+        atlas_player_left->save_flip_atlas_to(*atlas_player_right);
+        animation_player_left.set_atlas(atlas_player_left);
+        animation_player_right.set_atlas(atlas_player_right);
         is_size_change = false;
     }
     current_animation->on_update(delta);

@@ -7,8 +7,10 @@
 #include "Timer.h"
 #include "Tools.h"
 
-extern Atlas atlas_player_left;
-extern Atlas atlas_player_right;
+extern Atlas atlas_player_1_left;
+extern Atlas atlas_player_1_right;
+extern Atlas atlas_player_2_left;
+extern Atlas atlas_player_2_right;
 extern bool is_debug;
 
 class Player
@@ -24,7 +26,7 @@ public:
 
 	~Player();
 
-	void on_input(const ExMessage& msg);
+	virtual void on_input(const ExMessage& msg);
 
 	void on_update(int delta);
 
@@ -50,11 +52,11 @@ public:
 
 	void debug_on_draw() const;
 
-private:
+protected:
 
 	void on_move();
 
-private:
+protected:
 
 	Vector2 m_size;
 	Vector2 m_position;
@@ -66,6 +68,9 @@ private:
 	bool is_move_right = false;
 
 	double m_speed = 1.8;
+
+	Atlas* atlas_player_left = nullptr;
+	Atlas* atlas_player_right = nullptr;
 
 	Animation animation_player_left;
 	Animation animation_player_right;

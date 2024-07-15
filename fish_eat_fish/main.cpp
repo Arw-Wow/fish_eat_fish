@@ -10,14 +10,19 @@
 #include "GameScene.h"
 
 #include "Player.h"
+#include "Player_1.h"
+#include "Player_2.h"
 #include "Fish.h"
 
 /*---------------------resource_begin--------------------*/
 
 #pragma comment(lib, "Winmm.lib")
 
-Atlas atlas_player_left;
-Atlas atlas_player_right;
+Atlas atlas_player_1_left;
+Atlas atlas_player_1_right;
+
+Atlas atlas_player_2_left;
+Atlas atlas_player_2_right;
 
 Atlas atlas_fish0_left;
 Atlas atlas_fish0_right;
@@ -54,8 +59,11 @@ IMAGE img_bar;
 
 void load_total_resouce()
 {
-	atlas_player_left.load_from_file("res/img/player_left_%d.png", 1);
-	atlas_player_left.save_flip_atlas_to(atlas_player_right);
+	atlas_player_1_left.load_from_file("res/img/player_1_left_%d.png", 1);
+	atlas_player_1_left.save_flip_atlas_to(atlas_player_1_right);
+
+	atlas_player_2_left.load_from_file("res/img/player_2_left_%d.png", 1);
+	atlas_player_2_left.save_flip_atlas_to(atlas_player_2_right);
 
 	atlas_fish0_left.load_from_file("res/img/fish0_left_%d.png", 1);
 	atlas_fish0_left.save_flip_atlas_to(atlas_fish0_right);
@@ -107,7 +115,8 @@ SceneManager* scene_manager = nullptr;
 Scene* game_scene = nullptr;
 Scene* menu_scene = nullptr;
 
-Player* player = nullptr;
+Player* player_1 = nullptr;
+Player* player_2 = nullptr;
 
 std::vector <Fish*> fish_list;
 
@@ -138,7 +147,8 @@ int main()
 	game_scene = new GameScene();
 	menu_scene = new MenuScene();
 
-	player = new Player();
+	player_1 = new Player_1();
+	player_2 = new Player_2();
 
 	scene_manager->set_current_scene(menu_scene);
 
@@ -183,7 +193,8 @@ int main()
 	delete scene_manager;
 	delete game_scene;
 	delete menu_scene;
-	delete player;
+	delete player_1;
+	delete player_2;
 	for (Fish* fish : fish_list)
 	{
 		delete fish;

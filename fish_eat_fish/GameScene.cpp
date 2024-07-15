@@ -15,18 +15,25 @@ void GameScene::on_enter()
 {
     timer_generate_fish.restart();
 
-    if (player)
+    if (player_1)
     {
-        delete player;
-        player = new Player();
+        delete player_1;
+        player_1 = new Player_1();
     }
+
+	if (player_2)
+	{
+		delete player_2;
+		player_2 = new Player_2();
+	}
 
     mciSendString("play game_bgm repeat from 0", NULL, 0, NULL);
 }
 
 void GameScene::on_input(const ExMessage& msg)
 {
-    player->on_input(msg);
+    player_1->on_input(msg);
+	player_2->on_input(msg);
 
     switch (msg.message)
     {
@@ -46,7 +53,8 @@ void GameScene::on_input(const ExMessage& msg)
 
 void GameScene::on_update(int delta)
 {
-    player->on_update(delta);
+    player_1->on_update(delta);
+    player_2->on_update(delta);
 
     timer_generate_fish.on_update(delta);
 
@@ -55,7 +63,8 @@ void GameScene::on_update(int delta)
         fish->on_update(delta);
     }
 
-    check_touch();
+    check_touch(player_1);
+    check_touch(player_2);
 
     for (int i = 0; i < fish_list.size(); i++)
     {
@@ -80,17 +89,28 @@ void GameScene::on_draw()
         fish->on_draw();
     }
 
-    player->on_draw();
+    player_1->on_draw();
+	player_2->on_draw();
 
-    // 显示hp
-    char text_hp[256] = { 0 };
-    sprintf_s(text_hp, sizeof(text_hp), "hp: %d", player->get_hp());
-    outtextxy(20, 20, text_hp);
+    // 显示player_1 hp
+    char text_player_1_hp[256] = { 0 };
+    sprintf_s(text_player_1_hp, sizeof(text_player_1_hp), "hp: %d", player_1->get_hp());
+    outtextxy(20, 20, text_player_1_hp);
 
-    // 显示score
-    char text_score[256] = { 0 };
-    sprintf_s(text_score, sizeof(text_score), "score: %d", player->get_score());
-    outtextxy(20, 60, text_score);
+    // 显示player_1 score
+    char text_player_1_score[256] = { 0 };
+    sprintf_s(text_player_1_score, sizeof(text_player_1_score), "score: %d", player_1->get_score());
+    outtextxy(20, 60, text_player_1_score);
+
+	// 显示player_2 hp
+	char text_player_2_hp[256] = { 0 };
+	sprintf_s(text_player_2_hp, sizeof(text_player_2_hp), "hp: %d", player_2->get_hp());
+	outtextxy(getwidth() - 20 - textwidth("hp:         "), 20, text_player_2_hp);
+
+	// 显示player_2 score
+	char text_player_2_score[256] = { 0 };
+	sprintf_s(text_player_2_score, sizeof(text_player_2_score), "score: %d", player_2->get_score());
+	outtextxy(getwidth() - 20 - textwidth("score:         "), 60, text_player_2_score);
 
     if (is_debug)
     {
@@ -99,7 +119,8 @@ void GameScene::on_draw()
             fish->debug_on_draw();
         }
 
-        player->debug_on_draw();
+        player_1->debug_on_draw();
+        player_2->debug_on_draw();
     }
 }
 
@@ -147,9 +168,13 @@ void GameScene::generate_fish_randomly()
     }
 
     fish_list.push_back(fish);
+
+	interval_generate_fish = (rand() % 1500) + 300;
+	timer_generate_fish.set_interval(interval_generate_fish);
+	timer_generate_fish.restart();
 }
 
-void GameScene::check_touch()
+void GameScene::check_touch(Player* player)
 {
     Vector2& player_position = player->get_position();
     Vector2& player_size = player->get_size();

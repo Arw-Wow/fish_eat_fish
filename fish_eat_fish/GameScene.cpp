@@ -40,7 +40,7 @@ void GameScene::on_input(const ExMessage& msg)
     case WM_KEYDOWN:
         switch (msg.vkcode)
         {
-        case VK_SPACE:
+        case to_vkcode('q'):
             is_debug = !is_debug;
             break;
         case VK_ESCAPE:
@@ -92,6 +92,10 @@ void GameScene::on_draw()
     player_1->on_draw();
 	player_2->on_draw();
 
+	settextcolor(WHITE);
+	setbkmode(TRANSPARENT);
+	settextstyle(40, 20, "华文琥珀");
+
     // 显示player_1 hp
     char text_player_1_hp[256] = { 0 };
     sprintf_s(text_player_1_hp, sizeof(text_player_1_hp), "hp: %d", player_1->get_hp());
@@ -111,6 +115,12 @@ void GameScene::on_draw()
 	char text_player_2_score[256] = { 0 };
 	sprintf_s(text_player_2_score, sizeof(text_player_2_score), "score: %d", player_2->get_score());
 	outtextxy(getwidth() - 20 - textwidth("score:         "), 60, text_player_2_score);
+
+	// 显示“按Q进入开发者模式”
+	settextcolor(YELLOW);
+	setbkmode(TRANSPARENT);
+	settextstyle(20, 10, "宋体");
+	outtextxy((getwidth() - textwidth("按Q进入开发者模式")) / 2, 60, "按Q进入开发者模式");
 
     if (is_debug)
     {
